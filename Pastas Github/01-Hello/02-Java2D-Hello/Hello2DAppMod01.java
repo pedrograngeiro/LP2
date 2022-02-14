@@ -36,17 +36,32 @@ class Hello2DFrameMod01 extends JFrame {
         int w = getWidth();
         int h = getHeight();
 
+        //Cor de fundo
         g.setColor(Color.black);
         g.fillRect(0, 0, w, h);
-        //Cor da linha
+
+        //Linha Cruzada
         g2d.setPaint (new Color(126,112,183)); 
-        
-        //Stroke
         g2d.setStroke(new BasicStroke(5));
-
-        
-
         g2d.drawLine(0, 0, w, h);
         g2d.drawLine(0, h, w, 0);
+
+        //Quadrado sem fundo
+        int tamanhoQuadrado = 600;
+        g2d.setPaint(Color.white);
+        g2d.drawRect(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado);
+
+        //Quadrado agora com fundo
+        g2d.setPaint(Color.white);
+        g2d.fillRect(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado);
+
+        //Circulo sem fundo
+        g2d.setPaint(Color.red);
+        g2d.drawArc(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado, 0, 300);
+
+
+        //Ciruclo agora com fundo
+        g2d.setPaint(Color.red);
+        g2d.fillArc(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado, 0, 360);
     }
 }
