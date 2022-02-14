@@ -57,7 +57,7 @@ class Hello2DFrameMod01 extends JFrame {
 
         //Circulo sem fundo
         g2d.setPaint(Color.red);
-        g2d.drawArc(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado, 0, 300);
+        g2d.drawArc(w/2 - tamanhoQuadrado/2, h/2 - tamanhoQuadrado/2, tamanhoQuadrado, tamanhoQuadrado, 0, 360);
 
 
         //Ciruclo agora com fundo
