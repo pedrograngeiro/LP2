@@ -60,6 +60,9 @@ class Elipse {
     void Paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
+        g2d.setColor(Color.gray);
+        g2d.fillRect(0, 0, 400, 400);
+
         g2d.setColor(Color.RED);
         g2d.setStroke(new BasicStroke(3));
         g2d.drawLine(50, 50, this.x1, this.y1);
