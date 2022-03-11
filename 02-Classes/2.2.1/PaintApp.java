@@ -11,7 +11,7 @@ class PaintApp {
 }
 
 class PaintFrame extends JFrame {
-    Rect r1, r2, r3;
+    Rect r1, r2, r3, r4;
     
     PaintFrame () {
         this.addWindowListener (
@@ -27,17 +27,20 @@ class PaintFrame extends JFrame {
         this.r1 = new Rect (50, 50, 100, 30, new Color(247, 5, 244), new Color(237,5, 118));
         this.r2 = new Rect (50, 100, 250, 60, new Color(116, 5, 224) , new Color(169, 5, 224));
         this.r3 = new Rect (150, 200, 150, 60, new Color(116, 5, 247), new Color(48, 5, 237));
+        this.r4 = new Rect (30, 280, 300, 60, new Color(48, 5, 237), new Color(116, 5, 247));
 
         // Mostrando a tela as posições
         this.r1.print();
         this.r2.print();
         this.r3.print();
+        this.r4.print();
     }
     public void paint (Graphics g) {
         super.paint(g);
         this.r1.paint(g);
         this.r2.paint(g);
         this.r3.paint(g);
+        this.r4.paint(g);
     }
 }
 
