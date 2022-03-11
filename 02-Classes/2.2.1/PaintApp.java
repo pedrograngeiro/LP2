@@ -4,18 +4,16 @@ import javax.swing.*;
 
 
 class PaintApp {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         PaintFrame frame = new PaintFrame();
         frame.setVisible(true);
     }
 }
 
-
 class PaintFrame extends JFrame {
-
-    Rect background, r1, r2, r3;
-
-    PaintFrame() {
+    Rect r1, r2, r3;
+    
+    PaintFrame () {
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
@@ -23,58 +21,56 @@ class PaintFrame extends JFrame {
                 }
             }
         );
-
         this.setTitle("Painting Figures");
         this.setSize(350, 350);
-        
-        this.background = new Rect(0, 0, 350, 350, Color.GREEN, Color.green);
-        this.r1 = new Rect(20, 50, 200, 40, Color.BLACK, Color.ORANGE);
-        this.r2 = new Rect(40, 100, 300, 80, Color.RED, Color.BLACK);
-        this.r3 = new Rect(50, 200, 20, 100, Color.gray, Color.RED);
-        
-    }
+        this.getContentPane().setBackground(new Color(237, 5, 118, 93));
+        this.r1 = new Rect (50, 50, 100, 30, new Color(247, 5, 244), new Color(237,5, 118));
+        this.r2 = new Rect (50, 100, 250, 60, new Color(116, 5, 224) , new Color(169, 5, 224));
+        this.r3 = new Rect (150, 200, 150, 60, new Color(116, 5, 247), new Color(48, 5, 237));
 
-    public void paint(Graphics g) {
+        // Mostrando a tela as posições
+        this.r1.print();
+        this.r2.print();
+        this.r3.print();
+    }
+    public void paint (Graphics g) {
         super.paint(g);
-        this.background.Paint(g);
-        this.r1.Paint(g);
-        this.r2.Paint(g);
-        this.r3.Paint(g);
+        this.r1.paint(g);
+        this.r2.paint(g);
+        this.r3.paint(g);
     }
 }
 
 class Rect {
     int x, y;
     int w, h;
+    Color corDaBorda;
     Color corDePreenchimento;
-    Color corDeBorda;
 
-    Rect(int x, int y, int w, int h, Color corDeBorda, Color corDePreenchimento) {
+    Rect(int x, int y, int w, int h, Color corDaBorda, Color corDePreenchimento) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
-        this.corDeBorda = corDeBorda;
+        this.corDaBorda = corDaBorda;
         this.corDePreenchimento = corDePreenchimento;
     }
-    
 
-    void Print() {
-        System.out.format("Retangulo de tamanho(%d, %d) na posicao (%d, %d).\n",
-        this.w, this.h, this.x, this.y);
+
+    void print() {
+        System.out.format("Retangulo de tamamnho (%d, %d) na posicao (%d, %d).\n",
+            this.w, this.h, this.x, this.y);
+    } 
+
+    void paint (Graphics g) {
+        Graphics g2d = (Graphics2D) g;
+        
+        g2d.setColor(corDaBorda);
+        g2d.drawRect(this.x, this.y , this. w, this.h);
+        
+        g2d.setColor(corDePreenchimento);
+        g2d.fillRect(this.x, this.y, this.w, this.h);
+        
         
     }
-
-    void Paint(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-
-        g2d.setColor(this.corDeBorda);
-        g2d.drawRect(this.x, this.y, this.w, this.h);
-
-        g2d.setColor(this.corDePreenchimento);
-        g2d.fillRect(this.x, this.y, this.w, this.h);
-
-        g2d.setStroke(new BasicStroke(5));
-    }
-
 }

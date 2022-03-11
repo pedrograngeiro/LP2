@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 class PaintApp {
     public static void main (String[] args) {
         PaintFrame frame = new PaintFrame();
@@ -70,7 +69,6 @@ class Rect {
         
         g2d.setColor(corDePreenchimento);
         g2d.fillRect(this.x, this.y, this.w, this.h);
-        
         
     }
 }
