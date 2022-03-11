@@ -57,10 +57,12 @@ class Rect {
         this.corDeBorda = corDeBorda;
         this.corDePreenchimento = corDePreenchimento;
     }
+    
 
     void Print() {
         System.out.format("Retangulo de tamanho(%d, %d) na posicao (%d, %d).\n",
         this.w, this.h, this.x, this.y);
+        
     }
 
     void Paint(Graphics g) {
