@@ -56,15 +56,22 @@ class Rect {
         this.corDePreenchimento = corDePreenchimento;
     }
 
+    public void setStroke(int i) {
+    }
+
     void print() {
         System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
             this.w, this.h, this.x, this.y);
     }
 
     void paint (Graphics g) {
-        Graphics g2d = (Graphics2D) g;
+        Graphics2D g2d = (Graphics2D) g;
+        
+        
+
 
         g2d.setColor(corDaBorda);
+        // g2d.setStroke(new BasicStroke(10));
         g2d.drawRect(this.x, this.y, this.w, this.h);
 
         g2d.setColor(corDePreenchimento);
