@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
 
 class RectEllipseApp {
     public static void main (String[] args) {
@@ -24,10 +23,10 @@ class RectEllipseFrame extends JFrame {
             }
         );
         this.setTitle("Rect + Ellipse");
-        this.getContentPane().setBackground(new Color(237, 5, 118, 93));
+        this.getContentPane().setBackground(new Color(237, 5, 118, 50));
         this.setSize(350, 350);
-        this.r1 = new Rect(50,50, 100, 30, new Color(247, 5, 244), new Color(237,5, 118));
-        this.e1 = new Ellipse(50,100, 100, 30, new Color(116, 5, 247), new Color(48, 5, 237));
+        this.r1 = new Rect(50,50, 200, 90, new Color(247, 5, 244), new Color(237,5, 118));
+        this.e1 = new Ellipse(50,200, 200, 90, new Color(116, 5, 247), new Color(48, 5, 237));
 
         //Mostrando a posição na tela
         this.r1.print();
@@ -67,11 +66,8 @@ class Rect {
     void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         
-        
-
-
         g2d.setColor(corDaBorda);
-        // g2d.setStroke(new BasicStroke(10));
+        g2d.setStroke(new BasicStroke(10));
         g2d.drawRect(this.x, this.y, this.w, this.h);
 
         g2d.setColor(corDePreenchimento);
@@ -103,6 +99,7 @@ class Ellipse {
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.setColor(corDaBorda);
+        g2d.setStroke(new BasicStroke(10));
         g2d.draw(new Ellipse2D.Double(this.x, this.y, this.w, this.h));
 
         g2d.setColor(corDePreenchimento);
