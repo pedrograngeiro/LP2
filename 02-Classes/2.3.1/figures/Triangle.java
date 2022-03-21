@@ -3,12 +3,13 @@ package figures;
 import java.awt.*;
 
 public class Triangle {
-    private int xPoints[];
-    private int yPoints[];
-    private int x, y, z;
+    private int [] xPoints = new int[3];
+    private int [] yPoints = new int[3];
+    private int x1, x2, x3;
 
-    public Triangle (int xPoints, int yPoints) {
-        this.xPoints = {this.x, this.y, this.z};
+    public Triangle (int[] xPoints, int[] yPoints) {
+        this.xPoints = xPoints;
+        this.yPoints = yPoints;
     }
 
     public void print () {
