@@ -3,22 +3,16 @@ package figures;
 import java.awt.*;
 
 public class Triangle {
-    private int [] xPoints = new int[3];
-    private int [] yPoints = new int[3];
-    private int x1, x2, x3;
+    int x;
+    int y;
 
-    public Triangle (int[] xPoints, int[] yPoints) {
-        this.xPoints = xPoints;
-        this.yPoints = yPoints;
+    public Triangle (int num1, int num2) {
+        x = num1;
+        y = num2;
     }
 
     public void print () {
-        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
-            this.w, this.h, this.x, this.y);
+        System.out.println("Valor de x = " + x + " Valor de y = " +y);
     }
 
-    public void paint (Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.drawRect(this.x,this.y, this.w,this.h);
-    }
 }
