@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import figures.*;
+import Figures.*;
 
 
 class PackApp {
@@ -27,15 +27,13 @@ class PackFrame extends JFrame {
             }
         );
         this.setTitle("Java Packages");
-        this.setSize(350, 350);
+        this.setSize(500, 500);
         
-        this.r1 = new Rect(50,50, 100, 30);
-        this.e1 = new Ellipse(50, 100, 100, 30, Color.BLACK);
-        this.l1 = new Line(150, 150, 50, 150);
+        this.r1 = new Rect(50,50, 150, 90, Color.BLUE, Color.GREEN);
+        this.e1 = new Ellipse(50, 150, 100, 30, Color.BLACK);
+        this.l1 = new Line(150, 320, 50, 320);
 
-        objTriangles[0] = new Triangle(100, 200, 300, 100, 200, 100);
-
-
+        objTriangles[0] = new Triangle(200, 50, 100, 200, 200, 300);
     }
 
     public void paint (Graphics g) {
