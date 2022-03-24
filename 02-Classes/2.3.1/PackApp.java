@@ -29,11 +29,11 @@ class PackFrame extends JFrame {
         this.setTitle("Java Packages");
         this.setSize(500, 500);
         
-        this.r1 = new Rect(50,50, 150, 90, Color.BLUE, Color.GREEN);
-        this.e1 = new Ellipse(50, 150, 100, 30, Color.BLACK);
-        this.l1 = new Line(150, 320, 50, 320);
+        this.r1 = new Rect(50,50, 150, 90, new Color(255, 0, 72), new Color(91, 16, 35));
+        this.e1 = new Ellipse(50, 150, 100, 30, new Color(129, 215, 205), new Color(177, 55, 86));
+        this.l1 = new Line(150, 320, 50, 320, Color.BLACK);
 
-        objTriangles[0] = new Triangle(200, 50, 100, 200, 200, 300);
+        objTriangles[0] = new Triangle(206, 50, 126, 200, 200, 300);
     }
 
     public void paint (Graphics g) {
