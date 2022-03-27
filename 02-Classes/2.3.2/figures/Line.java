@@ -1,18 +1,18 @@
-package figures;
+package Figures;
 
 import java.awt.*;
 
 public class Line {
     private int x, y;
     private int w, h;
-    private Color corDaBorda;
+    Color corDaLinha;
     
-    public Line (int x, int y,int w,  int h, Color corDaBorda) {
+    public Line (int x, int y,int w,  int h, Color corDaLinha) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
-        this.corDaBorda = corDaBorda;
+        this.corDaLinha = corDaLinha;
     }
 
     public void print () {
@@ -22,8 +22,7 @@ public class Line {
 
     public void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(corDaBorda);
-        g2d.setStroke(new BasicStroke(5));
+        g2d.setColor(corDaLinha);
         g2d.drawLine(this.x, this.y, this.w, this.h);
         
     }
