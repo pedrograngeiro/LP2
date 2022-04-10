@@ -2,14 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import org.w3c.dom.events.MouseEvent;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 import figures.*;
+import listeners.*;
 
-class ListApp {
+class GraphicsEditor {
     public static void main (String[] args) {
         ListFrame frame = new ListFrame();
         frame.setVisible(true);
@@ -19,6 +18,9 @@ class ListApp {
 class ListFrame extends JFrame {
     ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
+
+    Point mouse = null;
+    Point mousePos = null;
 
     ListFrame () {
         this.addWindowListener (
@@ -50,16 +52,7 @@ class ListFrame extends JFrame {
             }
         );
         
-        this.addMouseListener(
-            new MouseAdapter() {
-                public void mouseClicked (MouseEvent e) {
-                    int x1 = getX();
-                    int y1 = getY();
-
-                    System.out.format("x1 :%d \n y1:%d ",
-                    x1, y1);
-                }
-        });
+        
 
         this.setTitle("Graphics Editor");
         this.setSize(350, 350);
