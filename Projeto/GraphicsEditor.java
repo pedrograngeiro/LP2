@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import figures.*;
-import listeners.*;
+
 
 class GraphicsEditor {
     public static void main (String[] args) {
@@ -15,14 +15,15 @@ class GraphicsEditor {
     }
 }
 
-class ListFrame extends JFrame {
+class ListFrame extends JFrame implements MouseListener {
     ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
 
-    Point mouse = null;
-    Point mousePos = null;
+    JLabel label;
 
     ListFrame () {
+        
+
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
@@ -51,11 +52,20 @@ class ListFrame extends JFrame {
                 }
             }
         );
-        
-        
-
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Graphics Editor");
         this.setSize(350, 350);
+        this.setLayout(null);
+
+        label = new JLabel();
+        label.setBounds(0, 0, 50, 50);
+        label.setBackground(Color.red);
+        label.setOpaque(true);
+        label.addMouseListener(this);
+
+        this.add(label);
+        this.setVisible(true);
+
     }
 
     public void paint (Graphics g) {
@@ -63,5 +73,34 @@ class ListFrame extends JFrame {
         for (Figure fig: this.figs) {
             fig.paint(g);
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //System.out.println("Voce clicou");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //System.out.println("Voce segurou o click");
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //System.out.println("Voce Soltou o click");
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //System.out.println("Voce entrou na figura");
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //System.out.println("O mouse saiu da figura");
+        
     }
 }
