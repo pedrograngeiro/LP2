@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Panels.EllipsePanel;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -51,14 +53,13 @@ class ListFrame extends JFrame {
             }
         );
 
-        this.getContentPane().addMouseListener(
-            new ClickListener()
-        );
+        // this.getContentPane().addMouseListener(
+        //     new ClickListener()
+        // );
 
-        // window.getContentPane().addMouseListener(new ClickListener());
-        // window.setSize(350, 350);
-        // window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // window.setVisible(true);
+        EllipsePanel panel = new EllipsePanel();
+        this.setContentPane(panel);
+        panel.addMouseListener(new ClickListener(panel));
 
         this.setTitle("Graphics Editor");
         this.setSize(350, 350);
