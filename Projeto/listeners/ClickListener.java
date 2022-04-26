@@ -3,11 +3,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import Panels.EllipsePanel;
+
 import figures.Ellipse;
+
+
 
 public class ClickListener extends MouseAdapter{
 
     private EllipsePanel panel;
+    // private RectPanel 
     
     public ClickListener(EllipsePanel panel) {
         super();

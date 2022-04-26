@@ -3,12 +3,14 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Panels.EllipsePanel;
+import Panels.RectPanel;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import figures.*;
 import listeners.ClickListener;
+import listeners.ReleaseListener;
 
 
 class GraphicsEditor {
@@ -22,7 +24,7 @@ class ListFrame extends JFrame {
     JFrame window = new JFrame("Graphics Editor");
     ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
-
+    String figuraSelecionada;
     ListFrame () {
         this.addWindowListener (
             new WindowAdapter() {
@@ -35,31 +37,22 @@ class ListFrame extends JFrame {
         this.addKeyListener (
             new KeyAdapter() {
                 public void keyPressed (KeyEvent evt) {
-                    int x = rand.nextInt(350);
-                    int y = rand.nextInt(350);
-                    int w = rand.nextInt(50);
-                    int h = rand.nextInt(50);
-
-
+                    
                     if (evt.getKeyChar() == 'r') {
-                        Rect r = new Rect(x,y, w,h);
-                        figs.add(r);
-                    } else if (evt.getKeyChar() == 'e') {
-                        Ellipse e = new Ellipse(x, y, w, h);
-                        figs.add(e);
+                        figuraSelecionada = "rect";
                     }
-                    repaint();
                 }
             }
         );
 
-        // this.getContentPane().addMouseListener(
-        //     new ClickListener()
-        // );
-
-        EllipsePanel panel = new EllipsePanel();
-        this.setContentPane(panel);
-        panel.addMouseListener(new ClickListener(panel));
+        //EllipsePanel panel = new EllipsePanel();
+        if(figuraSelecionada == "rect"){
+            RectPanel panel = new RectPanel();
+            this.setContentPane(panel);
+            //panel.addMouseListener(new ClickrListener(panel));
+            panel.addMouseListener(new ReleaseListener(panel));    
+        }
+        
 
         this.setTitle("Graphics Editor");
         this.setSize(350, 350);

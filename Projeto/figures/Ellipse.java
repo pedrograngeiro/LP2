@@ -1,7 +1,6 @@
 package figures;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 
 public class Ellipse extends Figure {
     public Ellipse (int x, int y, int w, int h) {
