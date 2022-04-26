@@ -25,10 +25,6 @@ public class ReleaseListener extends MouseAdapter{
         panel.addRect(new Rect(e.getX(), e.getY(), 24, 24));
     }
 
-    // new KeyAdapter() {
-    //     public void keyPressed (KeyEvent evt){
-    //         panel.addRect(new Rect(evt.getX(), evt.getY() , 24, 24));
-    //     }
-    // }
+    
 }
 

@@ -40,11 +40,23 @@ class ListFrame extends JFrame {
                     if (evt.getKeyChar() == 'r') {
                         figuraSelecionada = "rect";
                     }
-                    if(figuraSelecionada =="rect"){
+
+                    if (evt.getKeyChar() == 'e') {
+                        figuraSelecionada = "ellipse";
+                    }
+
+                    if (figuraSelecionada == "rect") {
                         RectPanel panel = new RectPanel();
                         setContentPane(panel);
                         panel.setSize(350, 350);
                         panel.addMouseListener(new ReleaseListener(panel));
+                    }
+
+                    if (figuraSelecionada == "ellipse") {
+                        EllipsePanel panel = new EllipsePanel();
+                        setContentPane(panel);
+                        panel.setSize(350, 350);
+                        panel.addMouseListener();
                     }
                 }
             }
