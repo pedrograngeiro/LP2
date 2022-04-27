@@ -11,6 +11,7 @@ import java.util.Random;
 import figures.*;
 import listeners.ClickListener;
 import listeners.ReleaseListener;
+import listeners.ReleaseListenerEllipse;
 
 
 class GraphicsEditor {
@@ -53,10 +54,10 @@ class ListFrame extends JFrame {
                     }
 
                     if (figuraSelecionada == "ellipse") {
-                        EllipsePanel panel = new EllipsePanel();
-                        setContentPane(panel);
-                        panel.setSize(350, 350);
-                        panel.addMouseListener();
+                        EllipsePanel ePanel = new EllipsePanel();
+                        setContentPane(ePanel);
+                        ePanel.setSize(350, 350);
+                        ePanel.addMouseListener(new ReleaseListenerEllipse(ePanel));
                     }
                 }
             }
