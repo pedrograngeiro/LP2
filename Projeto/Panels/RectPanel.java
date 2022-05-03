@@ -8,7 +8,11 @@ import java.awt.Graphics;
 import figures.Rect;
 
 public class RectPanel extends JPanel{
-    private List<Rect> rects = new LinkedList<Rect>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Rect> rects = new LinkedList<Rect>();
 
     public void addRect(Rect rect){
         rects.add(rect);

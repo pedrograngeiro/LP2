@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import figures.*;
-import listeners.ClickListener;
 import listeners.ReleaseListener;
 import listeners.ReleaseListenerEllipse;
 
@@ -22,7 +21,11 @@ class GraphicsEditor {
 }
 
 class ListFrame extends JFrame {
-    ArrayList<Figure> figs = new ArrayList<Figure>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
     String figuraSelecionada;
     ListFrame () {

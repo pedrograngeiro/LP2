@@ -8,7 +8,11 @@ import java.awt.Graphics;
 import figures.Ellipse;
 
 public class EllipsePanel extends JPanel {
-    private List<Ellipse> ellipses = new LinkedList<Ellipse>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Ellipse> ellipses = new LinkedList<Ellipse>();
 
     public void addEllipse(Ellipse ellipse){
         ellipses.add(ellipse);
