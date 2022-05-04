@@ -43,9 +43,6 @@ public class ReleaseListener extends MouseAdapter{
     public void mouseReleased(MouseEvent e) {
     	RectPanel result = getPanel();
     	EllipsePanel eResult = getePanel();
-    	//System.out.println(getPanel());
-    	//getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
-    	//System.out.println(getePanel());
     	
     	if (eResult != null && getePanel() == ePanel) {
     		getePanel().addEllipse(new Ellipse(e.getX(), e.getY(), 24, 24));
@@ -54,18 +51,6 @@ public class ReleaseListener extends MouseAdapter{
     	if (result != null && getPanel() == panel) {
     		getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
     	}
-//    	if (getePanel() == ePanel) {
-//    		getePanel().addEllipse(new Ellipse(e.getX(), e.getY(), 24, 24));
-//    	}
-//    	
-//    	if (getPanel()) 
-    	/*
-    	if (getPanel().equals(panel)) {
-    		getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
-    	}
-    	*/
-    	
-    	//System.out.println(getePanel());
     	
     	
     }
