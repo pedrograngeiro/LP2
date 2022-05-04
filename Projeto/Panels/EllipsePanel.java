@@ -6,13 +6,14 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 
 import figures.Ellipse;
+import figures.Figure;
 
 public class EllipsePanel extends JPanel {
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<Ellipse> ellipses = new LinkedList<Ellipse>();
+	private List<Figure> ellipses = new LinkedList<Figure>();
 
     public void addEllipse(Ellipse ellipse){
         ellipses.add(ellipse);
@@ -21,7 +22,7 @@ public class EllipsePanel extends JPanel {
 
     @Override
     public void paint(Graphics g) {
-        for (Ellipse e : ellipses) {
+        for (Figure e : ellipses) {
             e.paint(g);
         }
     }

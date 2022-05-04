@@ -29,6 +29,8 @@ class ListFrame extends JFrame {
     Random rand = new Random();
     String figuraSelecionada;
     ListFrame () {
+    	RectPanel panel = new RectPanel();
+    	EllipsePanel ePanel = new EllipsePanel();
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
@@ -50,18 +52,15 @@ class ListFrame extends JFrame {
                     }
 
                     if (figuraSelecionada == "rect") {
-                        RectPanel panel = new RectPanel();
                         setContentPane(panel);
                         panel.setSize(350, 350);
                         panel.addMouseListener(new ReleaseListener(panel));
+                    }else if(figuraSelecionada == "ellipse"){
+	                    setContentPane(ePanel);
+	                    ePanel.setSize(350, 350);
+	                    ePanel.addMouseListener(new ReleaseListenerEllipse(ePanel));
                     }
 
-                    if (figuraSelecionada == "ellipse") {
-                        EllipsePanel ePanel = new EllipsePanel();
-                        setContentPane(ePanel);
-                        ePanel.setSize(350, 350);
-                        ePanel.addMouseListener(new ReleaseListenerEllipse(ePanel));
-                    }
                 }
             }
         );

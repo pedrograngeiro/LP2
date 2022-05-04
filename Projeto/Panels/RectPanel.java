@@ -5,6 +5,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 
+import figures.Figure;
 import figures.Rect;
 
 public class RectPanel extends JPanel{
@@ -12,7 +13,7 @@ public class RectPanel extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<Rect> rects = new LinkedList<Rect>();
+	private List<Figure> rects = new LinkedList<Figure>();
 
     public void addRect(Rect rect){
         rects.add(rect);
@@ -21,7 +22,7 @@ public class RectPanel extends JPanel{
 
     @Override
     public void paint(Graphics g) {
-        for (Rect r : rects) {
+        for (Figure r : rects) {
             r.paint(g);
         }
     }

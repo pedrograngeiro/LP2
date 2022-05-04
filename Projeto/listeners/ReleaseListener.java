@@ -21,8 +21,4 @@ public class ReleaseListener extends MouseAdapter{
         panel.addRect(new Rect(e.getX(), e.getY(), 24, 24));
     }
 
-    
-
-    
 }
-
