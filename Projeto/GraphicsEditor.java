@@ -55,7 +55,8 @@ class ListFrame extends JFrame {
                         setContentPane(panel);
                         panel.setSize(350, 350);
                         panel.addMouseListener(new ReleaseListener.Builder().panel(panel).build());
-                    }else if(figuraSelecionada == "ellipse"){
+                    }
+                    if(figuraSelecionada == "ellipse"){
 	                    setContentPane(ePanel);
 	                    ePanel.setSize(350, 350);
 	                    //ePanel.addMouseListener(new ReleaseListenerEllipse(ePanel));

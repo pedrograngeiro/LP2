@@ -10,8 +10,11 @@ import figures.Rect;
 
 public class ReleaseListener extends MouseAdapter{
 
-    private final RectPanel panel;
+
+	private final RectPanel panel;
     private final EllipsePanel ePanel;
+    
+    
 
     public ReleaseListener(Builder builder){
         this.panel = builder.panel;
@@ -38,16 +41,33 @@ public class ReleaseListener extends MouseAdapter{
     }
     
     public void mouseReleased(MouseEvent e) {
-    	//if(e.equals(getPanel())) {
-    	//	getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
-    	//} else{
-    	//	ePanel.addEllipse(new Ellipse(e.getX(), e.getY(), 24, 24));
-    	//}
-    	System.out.println(getPanel());
+    	RectPanel result = getPanel();
+    	EllipsePanel eResult = getePanel();
+    	//System.out.println(getPanel());
     	//getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
-    	System.out.println(getePanel());
+    	//System.out.println(getePanel());
     	
-        
+    	if (eResult != null && getePanel() == ePanel) {
+    		getePanel().addEllipse(new Ellipse(e.getX(), e.getY(), 24, 24));
+    	}
+    	
+    	if (result != null && getPanel() == panel) {
+    		getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
+    	}
+//    	if (getePanel() == ePanel) {
+//    		getePanel().addEllipse(new Ellipse(e.getX(), e.getY(), 24, 24));
+//    	}
+//    	
+//    	if (getPanel()) 
+    	/*
+    	if (getPanel().equals(panel)) {
+    		getPanel().addRect(new Rect(e.getX(), e.getY(), 24, 24));
+    	}
+    	*/
+    	
+    	//System.out.println(getePanel());
+    	
+    	
     }
 
 	public RectPanel getPanel() {
